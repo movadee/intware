@@ -14,10 +14,32 @@ import React, { useEffect, useState } from "react";
 import Rating from "../Rating/Rating";
 import styles from "./styles";
 
-function LightBulbIcon(props: SvgIconProps) {
+function RestaurantIcon(props: SvgIconProps) {
   return (
     <SvgIcon {...props}>
-      <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="29"
+        height="29"
+        viewBox="0 0 29 29"
+        fill="none">
+        <g clip-path="url(#clip0_7316_1132)">
+          <path
+            d="M13.3333 10.9977H11V2.83105H8.66667V10.9977H6.33333V2.83105H4V10.9977C4 13.4711 5.93667 15.4777 8.375 15.6294V26.1644H11.2917V15.6294C13.73 15.4777 15.6667 13.4711 15.6667 10.9977V2.83105H13.3333V10.9977ZM19.1667 7.49772V16.8311H22.0833V26.1644H25V2.83105C21.78 2.83105 19.1667 5.44439 19.1667 7.49772Z"
+            fill="#051D33"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_7316_1132">
+            <rect
+              width="28"
+              height="28"
+              fill="white"
+              transform="translate(0.5 0.5)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
     </SvgIcon>
   );
 }
@@ -57,15 +79,14 @@ export default function CardComponent() {
   return (
     <Card sx={{ maxWidth: 900 }}>
       <CardHeader
-        avatar={<LightBulbIcon sx={{ mr: 1, verticalAlign: "middle" }} />}
+        avatar={<RestaurantIcon sx={{ mr: 1, verticalAlign: "middle" }} />}
         action={
           !isDesktop && (
             <ExpandMore
               expand={expanded}
               onClick={handleExpandClick}
               aria-expanded={expanded}
-              aria-label="show more"
-            >
+              aria-label="show more">
               <ExpandMoreIcon />
             </ExpandMore>
           )
