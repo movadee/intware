@@ -5,7 +5,7 @@ import { mapContainerStyle, mapOptions } from "./map.config";
 
 const MapComponent: React.FC = () => {
   return (
-    <LoadScript googleMapsApiKey="AIzaSyAei004gua2HYXRsMfnlZdGuHaVYGSybFg">
+    <LoadScript googleMapsApiKey="GOOGLE_MAPS_API_KEY">
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         center={{ lat: 39.8283, lng: -98.5795 }}
