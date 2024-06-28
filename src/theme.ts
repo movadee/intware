@@ -96,7 +96,7 @@ export const Theme = extendTheme({
       fontSynthesis: "none",
     },
     body1: {
-      fontSize: "0.875rem",
+      fontSize: "0.75rem",
       fontFamily: "Avenir",
       fontWeight: 400,
       fontSynthesis: "none",

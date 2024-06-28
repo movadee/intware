@@ -1,6 +1,5 @@
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useMediaQuery, useTheme } from "@mui/material";
-import Box from "@mui/material/Box";
+import { Grid, useMediaQuery, useTheme } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardHeader from "@mui/material/CardHeader";
@@ -79,7 +78,7 @@ export default function CardComponent() {
   return (
     <Card sx={{ maxWidth: 900 }}>
       <CardHeader
-        avatar={<RestaurantIcon sx={{ mr: 1, verticalAlign: "middle" }} />}
+        avatar={<RestaurantIcon sx={{ verticalAlign: "middle" }} />}
         action={
           !isDesktop && (
             <ExpandMore
@@ -91,27 +90,29 @@ export default function CardComponent() {
             </ExpandMore>
           )
         }
-        title="Gregs Deli and Cafe"
-        subheader="Restaurant"
+        title={<Typography variant="h3">Gregs Deli and Cafe</Typography>}
+        subheader={<Typography>Restaurant</Typography>}
       />
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent sx={styles.pillarWrapper}>
-          <Box sx={styles.pillar}>
-            <Typography variant="h3">Eating places</Typography>
-            <Typography variant="body1">Business sub-type</Typography>
-          </Box>
-          <Box sx={styles.pillar}>
-            <Typography variant="h3">Sandwich shop</Typography>
-            <Typography variant="body1">Specialization</Typography>
-          </Box>
-          <Box sx={styles.pillar}>
-            <Typography variant="h3">Moderate</Typography>
-            <Typography variant="body1">Price level</Typography>
-          </Box>
-          <Box sx={styles.pillar}>
-            <Rating rating={4}></Rating>
-            <Typography variant="body1">Average rating</Typography>
-          </Box>
+          <Grid container spacing={4} columns={4}>
+            <Grid item>
+              <Typography variant="h3">Eating places</Typography>
+              <Typography variant="body1">Business sub-type</Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="h3">Sandwich shop</Typography>
+              <Typography variant="body1">Specialization</Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="h3">Moderate</Typography>
+              <Typography variant="body1">Price level</Typography>
+            </Grid>
+            <Grid item>
+              <Rating rating={4}></Rating>
+              <Typography variant="body1">Average rating</Typography>
+            </Grid>
+          </Grid>
         </CardContent>
       </Collapse>
     </Card>
