@@ -134,7 +134,7 @@ const FilterList = () => {
           expanded={expandedAccordion === sectionIndex}
           onChange={handleAccordionChange(sectionIndex)}
         >
-          <MyAccordionSummary expandIcon={expandedAccordion === sectionIndex ? <RemoveIcon /> : <AddIcon />}>
+          <MyAccordionSummary expandIcon={expandedAccordion === sectionIndex ? <RemoveIcon sx={{color: '#7dbacd'}} /> : <AddIcon sx={{color: '#7dbacd'}} />}>
             <HouseIcon />
             <Typography>{section.title}</Typography>
           </MyAccordionSummary>
@@ -145,6 +145,10 @@ const FilterList = () => {
                   <FormControlLabel
                     control={
                       <Checkbox
+                        sx={{
+                          color: '#bbbcbc',
+                          '&.Mui-checked': { color: '#007191' },
+                        }}
                         onChange={() => handleCheck(sectionIndex, itemIndex)}
                       />
                     }
