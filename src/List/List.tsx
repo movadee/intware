@@ -130,7 +130,13 @@ const FilterList = () => {
       {filters.map((section, sectionIndex) => (
         <Accordion
           key={section.title}
-          sx={{ boxShadow: 0, borderRadius: 8, margin: 0}}
+          sx={{
+            boxShadow: 0,
+            margin: 0,
+            '&.Mui-expanded': {
+              margin: 0,
+            },
+          }}
           expanded={expandedAccordion === sectionIndex}
           onChange={handleAccordionChange(sectionIndex)}
         >
@@ -138,8 +144,8 @@ const FilterList = () => {
             <HouseIcon />
             <Typography>{section.title}</Typography>
           </MyAccordionSummary>
-          <AccordionDetails sx={{px:0}}>
-            <List sx={{p:0}}>
+          <AccordionDetails sx={{p:0}}>
+            <List sx={{p:0, m:0}}>
               {section.items.map((item, itemIndex) => (
                 <ListItem key={item} sx={{py:0}}>
                   <FormControlLabel
