@@ -1,6 +1,5 @@
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useMediaQuery, useTheme } from "@mui/material";
-import Box from "@mui/material/Box";
+import { Grid, useMediaQuery, useTheme } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardHeader from "@mui/material/CardHeader";
@@ -23,7 +22,7 @@ function RestaurantIcon(props: SvgIconProps) {
         height="29"
         viewBox="0 0 29 29"
         fill="none">
-        <g clip-path="url(#clip0_7316_1132)">
+        <g clipPath="url(#clip0_7316_1132)">
           <path
             d="M13.3333 10.9977H11V2.83105H8.66667V10.9977H6.33333V2.83105H4V10.9977C4 13.4711 5.93667 15.4777 8.375 15.6294V26.1644H11.2917V15.6294C13.73 15.4777 15.6667 13.4711 15.6667 10.9977V2.83105H13.3333V10.9977ZM19.1667 7.49772V16.8311H22.0833V26.1644H25V2.83105C21.78 2.83105 19.1667 5.44439 19.1667 7.49772Z"
             fill="#051D33"
@@ -79,7 +78,7 @@ export default function CardComponent() {
   return (
     <Card sx={{ maxWidth: 900 }}>
       <CardHeader
-        avatar={<RestaurantIcon sx={{ mr: 1, verticalAlign: "middle" }} />}
+        avatar={<RestaurantIcon sx={{ verticalAlign: "middle" }} />}
         action={
           !isDesktop && (
             <ExpandMore
@@ -91,27 +90,29 @@ export default function CardComponent() {
             </ExpandMore>
           )
         }
-        title="Gregs Deli and Cafe"
-        subheader="Restaurant"
+        title={<Typography variant="h3">Gregs Deli and Cafe</Typography>}
+        subheader={<Typography>Restaurant</Typography>}
       />
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent sx={styles.pillarWrapper}>
-          <Box sx={styles.pillar}>
-            <Typography variant="h3">Eating places</Typography>
-            <Typography variant="body1">Business sub-type</Typography>
-          </Box>
-          <Box sx={styles.pillar}>
-            <Typography variant="h3">Sandwich shop</Typography>
-            <Typography variant="body1">Specialization</Typography>
-          </Box>
-          <Box sx={styles.pillar}>
-            <Typography variant="h3">Moderate</Typography>
-            <Typography variant="body1">Price level</Typography>
-          </Box>
-          <Box sx={styles.pillar}>
-            <Rating rating={4}></Rating>
-            <Typography variant="body1">Average rating</Typography>
-          </Box>
+          <Grid container spacing={4} columns={4}>
+            <Grid item>
+              <Typography variant="h3">Eating places</Typography>
+              <Typography variant="body1">Business sub-type</Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="h3">Sandwich shop</Typography>
+              <Typography variant="body1">Specialization</Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="h3">Moderate</Typography>
+              <Typography variant="body1">Price level</Typography>
+            </Grid>
+            <Grid item>
+              <Rating rating={4}></Rating>
+              <Typography variant="body1">Average rating</Typography>
+            </Grid>
+          </Grid>
         </CardContent>
       </Collapse>
     </Card>
